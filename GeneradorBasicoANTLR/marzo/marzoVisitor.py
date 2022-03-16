@@ -1,4 +1,4 @@
-# Generated from f:\pepot\Documents\8vo Semestre\TareaGeneradorBasico\marzo\marzo.g4 by ANTLR 4.9.3
+# Generated from f:\pepot\Documents\8vo Semestre\GeneradorANTLR\CompiladoresANTLR\GeneradorBasicoANTLR\marzo\marzo.g4 by ANTLR 4.9.3
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .marzoParser import marzoParser
@@ -69,6 +69,11 @@ class marzoVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by marzoParser#ifexpression.
+    def visitIfexpression(self, ctx:marzoParser.IfexpressionContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by marzoParser#print.
     def visitPrint(self, ctx:marzoParser.PrintContext):
         return self.visitChildren(ctx)
@@ -76,6 +81,11 @@ class marzoVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by marzoParser#declaracion.
     def visitDeclaracion(self, ctx:marzoParser.DeclaracionContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by marzoParser#ifnoelseExp.
+    def visitIfnoelseExp(self, ctx:marzoParser.IfnoelseExpContext):
         return self.visitChildren(ctx)
 
 

@@ -15,6 +15,7 @@ expression:
 
 statement:
     'if (' expression ') do this' statement #ifnoelse
+    | 'if (' expression ') do this' expression #ifnoelseExp
     | 'if (' expression ') do this' statement 'else do this' statement #if
     | 'if (' expression ') do this' statement 'else do this' expression #ifexpression
     | 'int' Letra  #declaracion
@@ -26,7 +27,5 @@ statement:
 Numero : [0-9]+;
 
 Letra: [a-zA-Z];
-
-Todo: [a-zA-Z0-9]+;
 
 WS : [ \t\n\r]+ -> skip ;

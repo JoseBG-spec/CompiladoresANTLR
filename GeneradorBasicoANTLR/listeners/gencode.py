@@ -41,8 +41,8 @@ class GenCode(marzoListener):
     def exitDivision(self, ctx: marzoParser.DivisionContext):
         print("DIV $v" + str((self.x)) +", " + "$v" + str(self.list2.pop()) + ", " + "$v" + str(self.list2.pop()))
     
-    def exitAsignacion(self, ctx:marzoParser.AsignacionContext):
-        print("li $v" + str((self.x)) +", " + "$v" + str(self.list2.pop()) + ", " + "$v" + str(self.list2.pop()))
+    #def exitAsignacion(self, ctx:marzoParser.AsignacionContext):
+        #print("li $v" + str((self.x)) +", " + "$v" + str(self.list2.pop()) + ", " + "$v" + str(self.list2.pop()))
 
     def exitDeclaracion(self, ctx:marzoParser.DeclaracionContext):
         self.x+=1
@@ -68,5 +68,11 @@ class GenCode(marzoListener):
     
     def exitEndStatement(self, ctx: marzoParser.EndStatementContext):
         print("-----------------------------------------")
+
+    def exitIfexpression(self, ctx: marzoParser.IfexpressionContext):
+        print("bequals $v" + str(self.list.pop(0)) +", $v" + str(self.list.pop(0)) + ", .main")
+    
+    def exitIfnoelseExp(self, ctx: marzoParser.IfnoelseExpContext):
+        print("bequals $v" + str(self.list.pop(0)) +", $v" + str(self.list.pop(0)))
     
 

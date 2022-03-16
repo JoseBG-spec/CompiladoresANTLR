@@ -1,4 +1,4 @@
-# Generated from f:\pepot\Documents\8vo Semestre\TareaGeneradorBasico\marzo\marzo.g4 by ANTLR 4.9.3
+# Generated from f:\pepot\Documents\8vo Semestre\GeneradorANTLR\CompiladoresANTLR\GeneradorBasicoANTLR\marzo\marzo.g4 by ANTLR 4.9.3
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .marzoParser import marzoParser
@@ -116,6 +116,15 @@ class marzoListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by marzoParser#ifexpression.
+    def enterIfexpression(self, ctx:marzoParser.IfexpressionContext):
+        pass
+
+    # Exit a parse tree produced by marzoParser#ifexpression.
+    def exitIfexpression(self, ctx:marzoParser.IfexpressionContext):
+        pass
+
+
     # Enter a parse tree produced by marzoParser#print.
     def enterPrint(self, ctx:marzoParser.PrintContext):
         pass
@@ -131,6 +140,15 @@ class marzoListener(ParseTreeListener):
 
     # Exit a parse tree produced by marzoParser#declaracion.
     def exitDeclaracion(self, ctx:marzoParser.DeclaracionContext):
+        pass
+
+
+    # Enter a parse tree produced by marzoParser#ifnoelseExp.
+    def enterIfnoelseExp(self, ctx:marzoParser.IfnoelseExpContext):
+        pass
+
+    # Exit a parse tree produced by marzoParser#ifnoelseExp.
+    def exitIfnoelseExp(self, ctx:marzoParser.IfnoelseExpContext):
         pass
 
 

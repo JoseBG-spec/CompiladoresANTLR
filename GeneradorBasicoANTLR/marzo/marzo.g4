@@ -1,6 +1,6 @@
 grammar marzo;
 
-program : expression*statement* ;
+program : expression* | statement* | expression*statement*;
 expression: 
     expression '+' expression #suma
     | Numero                #numero
@@ -16,6 +16,7 @@ expression:
 statement:
     'if (' expression ') do this' statement #ifnoelse
     | 'if (' expression ') do this' statement 'else do this' statement #if
+    | 'if (' expression ') do this' statement 'else do this' expression #ifexpression
     | 'int' Letra  #declaracion
     | 'print(' expression ')' #print
     | statement '//'        #endStatement

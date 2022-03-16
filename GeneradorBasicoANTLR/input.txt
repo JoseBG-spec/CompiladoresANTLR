@@ -1,2 +1,2 @@
-if (x > 10) do this print(5) else do this print(10) //
+if (x > 10) do this print(5) else do this 1+5+8 //
 if (y < 2) do this print(3) //

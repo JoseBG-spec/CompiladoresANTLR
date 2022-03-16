@@ -9,7 +9,8 @@ class GenCode(marzoListener):
         self.list2 = []
     
     def enterProgram(self, ctx:marzoParser.ProgramContext):
-        print(".text")
+        print("     .text")
+        print("main:")
 
     def exitNumero(self, ctx: marzoParser.NumeroContext):
         self.x+=1
@@ -25,12 +26,17 @@ class GenCode(marzoListener):
 
     def exitSuma(self, ctx:marzoParser.SumaContext):
         print("ADD $v" + str((self.x)) +", " + "$v" + str(self.list2.pop()) + ", " + "$v" + str(self.list2.pop()))
+        self.list.append(self.x)
+        self.list2.append(self.x)
 
     def exitResta(self, ctx: marzoParser.RestaContext):
         print("REST $v" + str((self.x)) +", " + "$v" + str(self.list2.pop()) + ", " + "$v" + str(self.list2.pop()))
+        self.list.append(self.x)
+        self.list2.append(self.x)
 
     def exitMultiplicacion(self, ctx: marzoParser.MultiplicacionContext):
         print("MULT $v" + str((self.x)) +", " + "$v" + str(self.list2.pop()) + ", " + "$v" + str(self.list2.pop()))
+        
 
     def exitDivision(self, ctx: marzoParser.DivisionContext):
         print("DIV $v" + str((self.x)) +", " + "$v" + str(self.list2.pop()) + ", " + "$v" + str(self.list2.pop()))
@@ -55,7 +61,7 @@ class GenCode(marzoListener):
         print("______")
 
     def exitIf(self, ctx:marzoParser.IfContext):
-        print("bequals $v" + str(self.list.pop(0)) +", $v" + str(self.list.pop(0)) + ", ELSE")
+        print("bequals $v" + str(self.list.pop(0)) +", $v" + str(self.list.pop(0)) + ", .main")
 
     def exitIfnoelse(self, ctx: marzoParser.IfnoelseContext):
         print("bequals $v" + str(self.list.pop(0)) +", $v" + str(self.list.pop(0)))
